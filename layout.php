@@ -13,6 +13,9 @@
             if($page_index == true){
                 include_once ($level.php_path.content_path.'index-content.php');
             }
+            if ($page_accounts == true) {
+                include_once($level.php_path.content_path.'account-content.php');
+            }
         ?>
         
         <?php include_once ($level.php_path.'footer.php')?>
@@ -20,6 +23,6 @@
 
     <!-- script -->
     <?php include_once ($level.php_path.'script.php')?>
-</body>
+</body> 
 
 </html>

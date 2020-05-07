@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-xl">
             <div class="container h-100">
-                <a class="navbar-brand" href="<?php echo $level.'index.php'?>">
+                <a class="navbar-brand" href="<?php echo $level.pages_path.'index.php'?>">
                     <h1 class="tm-site-title mb-0">Product Admin</h1>
                 </a>
                 <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -11,7 +11,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto h-100">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">
+                            <a class="nav-link active" href="<?php echo $level.pages_path.'index.php'?>">
                                 <i class="fas fa-tachometer-alt"></i>
                                 Dashboard
                                 <span class="sr-only">(current)</span>
@@ -33,14 +33,14 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $level.'pages_pathproducts.php'?>">
+                            <a class="nav-link" href="<?php echo $level.pages_path.'products.php'?>">
                                 <i class="fas fa-shopping-cart"></i>
                                 Products
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $level.'pages_pathaccounts.php'?>">
+                            <a class="nav-link" href="<?php echo $level.pages_path.'accounts.php'?>">
                                 <i class="far fa-user"></i>
                                 Accounts
                             </a>
