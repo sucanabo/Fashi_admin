@@ -16,6 +16,9 @@
             if ($page_accounts == true) {
                 include_once($level.php_path.content_path.'account-content.php');
             }
+            if ($page_addproduct == true) {
+                include_once($level.php_path.content_path.'addproduct-content.php');
+            }
         ?>
         
         <?php include_once ($level.php_path.'footer.php')?>
