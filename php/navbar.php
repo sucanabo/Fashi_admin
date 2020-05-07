@@ -62,7 +62,7 @@
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link d-block" href="<?php echo $level.'login.php'?>">
+                            <a class="nav-link d-block" href="<?php echo $level.pages_path.'login.php'?>">
                                 Admin, <b>Logout</b>
                             </a>
                         </li>

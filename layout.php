@@ -22,6 +22,9 @@
             if ($page_editproduct == true) {
                 include_once($level.php_path.content_path.'editproduct-content.php');
             }
+            if ($page_login == true) {
+                include_once($level.php_path.content_path.'login-content.php');
+            }
             if ($page_products == true) {
                 include_once($level.php_path.content_path.'products-content.php');
             }
