@@ -19,6 +19,9 @@
             if ($page_addproduct == true) {
                 include_once($level.php_path.content_path.'addproduct-content.php');
             }
+            if ($page_editproduct == true) {
+                include_once($level.php_path.content_path.'editproduct-content.php');
+            }
             if ($page_products == true) {
                 include_once($level.php_path.content_path.'products-content.php');
             }

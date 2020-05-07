@@ -5,7 +5,6 @@
             include_once ($level.php_path.comp_path.'products-list.php');
             //product categories
             include_once ($level.php_path.comp_path.'products-categories.php');
-        ?>
-        
+        ?>      
     </div>
 </div>

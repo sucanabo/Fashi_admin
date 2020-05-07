@@ -152,6 +152,9 @@
     <a
         href="<?php echo $level.pages_path.'add-product.php'?>"
         class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
+        <a
+        href="<?php echo $level.pages_path.'edit-product.php'?>"
+        class="btn btn-primary btn-block text-uppercase mb-3">Edit  selected product </a>
     <button class="btn btn-primary btn-block text-uppercase">
         Delete selected products
     </button>
