@@ -1,6 +1,6 @@
 <?php 
-    include_once ('../config.php');
-    $level = lv1;
+    include_once ('./config.php');
+    $level = lv0;
     $page_index = true;
     $page_accounts = false;
     $page_addproduct = false;

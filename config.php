@@ -1,5 +1,5 @@
 <?php
-    define('lv0', './');
+    define('lv0', '');
     define('lv1', '../');
     define('lv2', '../../');
     define('pages_path', 'pages/');
@@ -9,6 +9,7 @@
     define('content_path', 'content/');
     define('comp_path', 'components/');
     define('img_path', 'img/');
+    define('data_path', 'data/');
     
     
 ?>

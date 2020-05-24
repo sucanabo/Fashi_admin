@@ -2,78 +2,30 @@
             <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-overflow">
                 <h2 class="tm-block-title">Notification List</h2>
                 <div class="tm-notification-items">
-                    <div class="media tm-notification-item">
-                        <div class="tm-gray-circle"><img src="<?php echo $level.img_path ?>notification-01.jpg" alt="Avatar Image" class="rounded-circle"></div>
-                        <div class="media-body">
-                            <p class="mb-2"><b>Jessica</b> and <b>6 others</b> sent you new <a href="#"
-                                    class="tm-notification-link">product updates</a>. Check new orders.</p>
-                            <span class="tm-small tm-text-color-secondary">6h ago.</span>
+                    <?php 
+                    foreach ($notification as $noti) {
+                        ?>
+                        <div class="media tm-notification-item">
+                            <div class="tm-gray-circle"><img src="<?php echo $level.img_path.$noti['img']?>" alt="Avatar Image" class="rounded-circle"></div>
+                            <div class="media-body">
+                                <p class="mb-2"><b><?php echo $noti['accountname']?></b> and <b><?php echo $noti['others']?> others</b>
+                                <?php if($noti['actstatus'] == 'sendnew')
+                                    echo "send you new";
+                                    elseif ($noti['actstatus'] == 'sentexisting ') {
+                                        echo "send you existing ";
+                                    }
+                                    else {
+                                        echo "sent you";
+                                    }
+                                
+                                ?> <a href="#"
+                                    class="tm-notification-link"><?php echo $noti['status'];?></a>. <?php echo $noti['button'];?></p>
+                                <span class="tm-small tm-text-color-secondary"><?php echo $noti['time'];?>.</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="media tm-notification-item">
-                        <div class="tm-gray-circle"><img src="<?php echo $level.img_path ?>notification-02.jpg" alt="Avatar Image" class="rounded-circle"></div>
-                        <div class="media-body">
-                            <p class="mb-2"><b>Oliver Too</b> and <b>6 others</b> sent you existing <a href="#"
-                                    class="tm-notification-link">product updates</a>. Read more reports.</p>
-                            <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                        </div>
-                    </div>
-                    <div class="media tm-notification-item">
-                        <div class="tm-gray-circle"><img src="<?php echo $level.img_path ?>notification-03.jpg" alt="Avatar Image" class="rounded-circle"></div>
-                        <div class="media-body">
-                            <p class="mb-2"><b>Victoria</b> and <b>6 others</b> sent you <a href="#"
-                                    class="tm-notification-link">order updates</a>. Read order information.</p>
-                            <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                        </div>
-                    </div>
-                    <div class="media tm-notification-item">
-                        <div class="tm-gray-circle"><img src="<?php echo $level.img_path ?>notification-01.jpg" alt="Avatar Image" class="rounded-circle"></div>
-                        <div class="media-body">
-                            <p class="mb-2"><b>Laura Cute</b> and <b>6 others</b> sent you <a href="#"
-                                    class="tm-notification-link">product records</a>.</p>
-                            <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                        </div>
-                    </div>
-                    <div class="media tm-notification-item">
-                        <div class="tm-gray-circle"><img src="<?php echo $level.img_path ?>notification-02.jpg" alt="Avatar Image" class="rounded-circle"></div>
-                        <div class="media-body">
-                            <p class="mb-2"><b>Samantha</b> and <b>6 others</b> sent you <a href="#"
-                                    class="tm-notification-link">order stuffs</a>.</p>
-                            <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                        </div>
-                    </div>
-                    <div class="media tm-notification-item">
-                        <div class="tm-gray-circle"><img src="<?php echo $level.img_path ?>notification-03.jpg" alt="Avatar Image" class="rounded-circle"></div>
-                        <div class="media-body">
-                            <p class="mb-2"><b>Sophie</b> and <b>6 others</b> sent you <a href="#"
-                                    class="tm-notification-link">product updates</a>.</p>
-                            <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                        </div>
-                    </div>
-                    <div class="media tm-notification-item">
-                        <div class="tm-gray-circle"><img src="<?php echo $level.img_path ?>notification-01.jpg" alt="Avatar Image" class="rounded-circle"></div>
-                        <div class="media-body">
-                            <p class="mb-2"><b>Lily A</b> and <b>6 others</b> sent you <a href="#"
-                                    class="tm-notification-link">product updates</a>.</p>
-                            <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                        </div>
-                    </div>
-                    <div class="media tm-notification-item">
-                        <div class="tm-gray-circle"><img src="<?php echo $level.img_path ?>notification-02.jpg" alt="Avatar Image" class="rounded-circle"></div>
-                        <div class="media-body">
-                            <p class="mb-2"><b>Amara</b> and <b>6 others</b> sent you <a href="#"
-                                    class="tm-notification-link">product updates</a>.</p>
-                            <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                        </div>
-                    </div>
-                    <div class="media tm-notification-item">
-                        <div class="tm-gray-circle"><img src="<?php echo $level.img_path ?>notification-03.jpg" alt="Avatar Image" class="rounded-circle"></div>
-                        <div class="media-body">
-                            <p class="mb-2"><b>Cinthela</b> and <b>6 others</b> sent you <a href="#"
-                                    class="tm-notification-link">product updates</a>.</p>
-                            <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                        </div>
-                    </div>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>

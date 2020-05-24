@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php   
+<?php
+    include_once ($level.'DB.php');
     include_once ($level.php_path.'head.php');
 ?>
 
@@ -11,9 +12,11 @@
             //Nav Bar
             include_once ($level.php_path.'navbar.php');
             if($page_index == true){
+                include_once ($level.data_path.'index_data.php');
                 include_once ($level.php_path.content_path.'index-content.php');
             }
             if ($page_accounts == true) {
+                include_once ($level.data_path.'account_data.php');
                 include_once($level.php_path.content_path.'account-content.php');
             }
             if ($page_addproduct == true) {
@@ -26,9 +29,9 @@
                 include_once($level.php_path.content_path.'login-content.php');
             }
             if ($page_products == true) {
-                include_once($level.php_path.content_path.'products-content.php');
+                include_once ($level.data_path.'product_data.php');
+                include_once ($level.php_path.content_path.'products-content.php');
             }
-
         ?>
         
         <?php include_once ($level.php_path.'footer.php')?>
