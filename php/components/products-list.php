@@ -18,7 +18,7 @@
                 # code...
                 ?>
                     <tr>
-                        <th scope="row"><input type="checkbox" /></th>
+                        <th scope="row"><input type="checkbox" name="check[]" value="<?php echo $pr['productid']?>"/></th>
                         <td class="tm-product-name"><?php echo $pr['productname']?></td>
                         <td><?php echo $pr['unitsold']?></td>
                         <td><?php echo $pr['instock']?></td>
@@ -37,13 +37,11 @@
         </table>
     </div>
     <!-- table container -->
-    <a
-        href="<?php echo $level.pages_path.'add-product.php'?>"
+    <a href="<?php echo $level.pages_path.'add-product.php'?>"
         class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
-        <a
-        href="<?php echo $level.pages_path.'edit-product.php'?>"
+    <a href="<?php echo $level.pages_path.'edit-product.php'?>"
         class="btn btn-primary btn-block text-uppercase mb-3">Edit  selected product </a>
-    <button class="btn btn-primary btn-block text-uppercase">
+    <button type="button" href ="../index.php"class="btn btn-primary btn-block text-uppercase">
         Delete selected products
     </button>
     </div>

@@ -20,6 +20,7 @@
                 include_once($level.php_path.content_path.'account-content.php');
             }
             if ($page_addproduct == true) {
+                include_once ($level.data_path.'add-product_data.php');
                 include_once($level.php_path.content_path.'addproduct-content.php');
             }
             if ($page_editproduct == true) {

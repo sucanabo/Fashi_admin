@@ -10,6 +10,7 @@
     define('comp_path', 'components/');
     define('img_path', 'img/');
     define('data_path', 'data/');
+    define('function_path', 'function/');
     
     
 ?>
