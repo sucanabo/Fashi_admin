@@ -10,6 +10,8 @@
             <th scope="col">IN STOCK</th>
             <th scope="col">EXPIRE DATE</th>
             <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+            </tr>
             </tr>
         </thead>
         <tbody>
@@ -24,8 +26,13 @@
                         <td><?php echo $pr['instock']?></td>
                         <td><?php echo $pr['expriredate']?></td>
                         <td>
-                            <a href="#" class="tm-product-delete-link">
+                            <a href="<?php echo $level.php_path.function_path.'del_product.php?del='.$pr['productid'];?>" class="tm-product-delete-link">
                             <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="<?php echo $level.pages_path.'edit-product.php?edit='.$pr['productid'];?>" class="tm-product-delete-link">
+                            <i class="fas fa-edit tm-product-edit-icon" ></i>
                             </a>
                         </td>
                     </tr>

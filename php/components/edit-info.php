@@ -1,4 +1,7 @@
 <div class="col-xl-6 col-lg-6 col-md-12">
+            <?php
+            var_dump($pr);
+            ?>
     <form action="" method="post" class="tm-edit-product-form">
         <div class="form-group mb-3">
             <label
@@ -9,9 +12,9 @@
                 id="name"
                 name="name"
                 type="text"
-                value="Lorem Ipsum Product"
+                value="<?php echo $pr['productid']?>"
                 class="form-control validate"
-            />
+            />  
         </div>
         <div class="form-group mb-3">
             <label
@@ -22,7 +25,7 @@
                 class="form-control validate tm-small"
                 rows="5"
                 required
-            >Lorem ipsum dolor amet gentrify glossier locavore messenger bag chillwave hashtag irony migas wolf kale chips small batch kogi direct trade shaman.</textarea>
+            ><?php echo $product['description']?></textarea>
         </div>
         <div class="form-group mb-3">
             <label
@@ -34,9 +37,13 @@
                 id="category"
             >
                 <option>Select category</option>
-                <option value="1" selected>New Arrival</option>
-                <option value="2">Most Popular</option>
-                <option value="3">Trending</option>
+                <?php 
+                    foreach($catagories as $ct){
+                    ?>
+                        <option <?php if (isset($cate) && $cate == $ct['categoryid']) echo "selected=\"selected\"";  ?> value="<?php echo $ct['categoryid'];?>"><?php echo $ct['name']?></option>
+                    <?php
+                    }
+                ?>
             </select>
         </div>
         <div class="row">
@@ -49,7 +56,7 @@
                 id="expire_date"
                 name="expire_date"
                 type="text"
-                value="22 Oct, 2020"
+                value="<?php echo $product['expiredate'];?>"
                 class="form-control validate"
                 data-large-mode="true"
                 />
@@ -63,7 +70,7 @@
                 id="stock"
                 name="stock"
                 type="text"
-                value="19,765"
+                value="<?php echo $product['expiredate'];?>"
                 class="form-control validate"
                 />
             </div>

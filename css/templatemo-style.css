@@ -447,7 +447,7 @@ input[type="checkbox"]:focus {
   font-size: 0.95rem;
   font-weight: 600;
 }
-.tm-product-delete-icon {
+.tm-product-delete-icon,.tm-product-edit-icon {
   font-size: 1.1rem;
   color: #fff;
 }
@@ -460,7 +460,7 @@ input[type="checkbox"]:focus {
   height: 40px;
   text-align: center;
 }
-.tm-product-delete-link:hover .tm-product-delete-icon {
+.tm-product-delete-link:hover .tm-product-delete-icon,.tm-product-edit-link:hover .tm-product-edit-icon{
   color: #6d8ca6;
 }
 .custom-select {

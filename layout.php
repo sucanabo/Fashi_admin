@@ -17,17 +17,18 @@
             }
             if ($page_accounts == true) {
                 include_once ($level.data_path.'account_data.php');
-                include_once($level.php_path.content_path.'account-content.php');
+                include_once ($level.php_path.content_path.'account-content.php');
             }
             if ($page_addproduct == true) {
                 include_once ($level.data_path.'add-product_data.php');
-                include_once($level.php_path.content_path.'addproduct-content.php');
+                include_once ($level.php_path.content_path.'addproduct-content.php');
             }
             if ($page_editproduct == true) {
-                include_once($level.php_path.content_path.'editproduct-content.php');
+                include_once ($level.data_path.'edit-product_data.php');
+                include_once ($level.php_path.content_path.'editproduct-content.php');
             }
             if ($page_login == true) {
-                include_once($level.php_path.content_path.'login-content.php');
+                include_once ($level.php_path.content_path.'login-content.php');
             }
             if ($page_products == true) {
                 include_once ($level.data_path.'product_data.php');

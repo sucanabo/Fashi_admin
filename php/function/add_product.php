@@ -9,7 +9,7 @@
     $cate = $_POST['category'];
     $exdate = $_POST['expiredate'];
     $stock = $_POST['stock'];
-    if(is_string($cate) != true){ 
+    if($cate != 'Select category'){ 
         $result = DP::run_query ("INSERT INTO `productlist` (`productname`,`description`,`categories`,`expriredate`, `instock`) VALUES (?,?,?,?,?)",[$name,$des,$cate,$exdate,$stock],3);
     }
     header('location:'.$level.pages_path.'add-product.php');
