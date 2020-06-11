@@ -1,18 +1,16 @@
 <div class="col-xl-6 col-lg-6 col-md-12">
-            <?php
-            var_dump($pr);
-            ?>
-    <form action="" method="post" class="tm-edit-product-form">
+    <form action="<?php echo $level.php_path.function_path.'edit_product.php'?>" method="post" class="tm-edit-product-form">
         <div class="form-group mb-3">
             <label
                 for="name"
                 >Product Name
             </label>
+            <input type="text" name ="id" hidden="true" value="<?php echo $epr[0]['productid'];?>">
             <input
                 id="name"
                 name="name"
                 type="text"
-                value="<?php echo $pr['productid']?>"
+                value="<?php echo $epr[0]['productname'];?>"
                 class="form-control validate"
             />  
         </div>
@@ -24,8 +22,8 @@
             <textarea                    
                 class="form-control validate tm-small"
                 rows="5"
-                required
-            ><?php echo $product['description']?></textarea>
+                required name="description"
+            ><?php echo $epr[0]['description'];?></textarea>
         </div>
         <div class="form-group mb-3">
             <label
@@ -34,13 +32,13 @@
             >
             <select
                 class="custom-select tm-select-accounts"
-                id="category"
+                id="category" name = "category"
             >
                 <option>Select category</option>
                 <?php 
-                    foreach($catagories as $ct){
+                    foreach($cate as $ct){
                     ?>
-                        <option <?php if (isset($cate) && $cate == $ct['categoryid']) echo "selected=\"selected\"";  ?> value="<?php echo $ct['categoryid'];?>"><?php echo $ct['name']?></option>
+                        <option <?php if($ct['categoryid'] == $epr[0]['categories']) echo "selected=\"selected\"";?> value="<?php echo $ct['categoryid'];?>"><?php echo $ct['name']?></option>
                     <?php
                     }
                 ?>
@@ -56,7 +54,7 @@
                 id="expire_date"
                 name="expire_date"
                 type="text"
-                value="<?php echo $product['expiredate'];?>"
+                value="<?php echo $epr[0]['expiredate'];?>"
                 class="form-control validate"
                 data-large-mode="true"
                 />
@@ -70,7 +68,7 @@
                 id="stock"
                 name="stock"
                 type="text"
-                value="<?php echo $product['expiredate'];?>"
+                value="<?php echo $epr[0]['instock'];?>"
                 class="form-control validate"
                 />
             </div>

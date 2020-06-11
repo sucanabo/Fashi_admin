@@ -24,7 +24,7 @@
                         <td class="tm-product-name"><?php echo $pr['productname']?></td>
                         <td><?php echo $pr['unitsold']?></td>
                         <td><?php echo $pr['instock']?></td>
-                        <td><?php echo $pr['expriredate']?></td>
+                        <td><?php echo $pr['expiredate']?></td>
                         <td>
                             <a href="<?php echo $level.php_path.function_path.'del_product.php?del='.$pr['productid'];?>" class="tm-product-delete-link">
                             <i class="far fa-trash-alt tm-product-delete-icon"></i>

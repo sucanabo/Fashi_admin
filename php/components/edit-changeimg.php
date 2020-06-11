@@ -17,6 +17,6 @@
     </div>
     </div>
     <div class="col-12">
-        <button type="submit" class="btn btn-primary btn-block text-uppercase">Update Now</button>
+        <button type="submit" name="edit"  value="Uadate Now"class="btn btn-primary btn-block text-uppercase">Update Now</button>
     </div>
 </form>
