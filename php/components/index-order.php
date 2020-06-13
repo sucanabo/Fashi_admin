@@ -18,9 +18,9 @@
             foreach ($order as $o) {
                 ?>
                 <tr>
-                    <th scope="row"><b><?php echo $o['orderid']?></b></th>
+                    <th scope="row"><b><?php echo "#".$o['orderid']?></b></th>
                     <td>
-                        <div class="tm-status-circle <?php echo $o['class-prop']?>">
+                        <div class="tm-status-circle <?php echo $o['classprop']?>">
                         </div><?php echo $o['status']?>
                     </td>
                     <td><b><?php echo $o['operator']?></b></td>

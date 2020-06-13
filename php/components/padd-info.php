@@ -1,5 +1,5 @@
 <div class="col-xl-6 col-lg-6 col-md-12">
-    <form action="<?php echo $level.php_path.function_path.'add_product.php'?>" method ="post" class="tm-edit-product-form">
+    <form action="<?php echo $level.php_path.function_path.'add_product.php'?>" method ="post" enctype="multipart/form-data" class="tm-edit-product-form">
         <div class="form-group mb-3">
             <label
                 for="name"

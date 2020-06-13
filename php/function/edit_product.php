@@ -11,8 +11,10 @@
         $cate = $_POST['category'];
         $exdate =$_POST['expire_date'];
         $stock = $_POST['stock'];
-        //update
-        $result = DP::run_query ("UPDATE productlist set productname =?,`description` =?,`categories`=?,`expiredate`=?,`instock`=? WHERE `productid` = $id",[$name,$des,$cate,$exdate,$stock],1);
+        $img = 'products/'.$_FILES['fileupload']['name'];
+        var_dump($img);
+         //update
+        $result = DP::run_query ("UPDATE productlist set productname =?,`description` =?,`categories`=?,`expiredate`=?,`instock`=?, `img`= ? WHERE `productid` = $id",[$name,$des,$cate,$exdate,$stock,$img],1);
         //page load
         header('location:'.$level.pages_path.'products.php');
         
