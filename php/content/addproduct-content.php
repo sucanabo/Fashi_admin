@@ -15,7 +15,7 @@
             include_once ($level.php_path.comp_path.'padd-upimg.php');
           ?>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block text-uppercase">Add Product Now</button>
+            <button type="submit" name ="add" class="btn btn-primary btn-block text-uppercase">Add Product Now</button>
           </div>
         </form>
         </div>

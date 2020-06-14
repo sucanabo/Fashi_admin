@@ -5,7 +5,7 @@
         <table class="table tm-table-small tm-product-table">
         <tbody>
         <?php 
-        foreach( $catagories as $ca){
+        foreach( $catagory as $ca){
             ?>
             <tr>
                 <td class="tm-product-name"><?php echo $ca['name']?></td>

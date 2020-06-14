@@ -6,15 +6,15 @@
 //-------------------------------------
 
     //upload image
-    $targer_dir = $level.img_path."products/"; //thu muc luu anh
+    $folder = "products/";
+    $targer_dir = $level.img_path.$folder; //thu muc luu anh
+    $targer_dir2= $level.'../FashiShop/'.img_path.$folder;
+    var_dump($targer_dir2);
     $targer_file = $targer_dir.basename($_FILES['fileupload']['name']);//duong dan luu tam
     $allowUpload = true;
     $imageFileType = pathinfo($targer_file,PATHINFO_EXTENSION);//lay dinh dang file
     $allowTypes = array('jpg','png','jpeg','gif');
-
-    var_dump($_POST);
-    var_dump($_FILES);
-    if(isset($_POST["submit"])){
+    if(isset($_POST['add'])){
         //check anh
         $checkimg = getimagesize($_FILES['fileupload']['tmp_name']);
         if($checkimg !== false){
@@ -37,14 +37,16 @@
         }
         //Check AllowUpload
         if($allowUpload){
-            if(move_uploaded_file($_FILES['fileupload']['tmp_name'],$targer_file)){
+            if(move_uploaded_file($_FILES['fileupload']['tmp_name'],$targer_file) == true  && move_uploaded_file($_FILES['fileupload']['tmp_name'],$targer_dir2) == true){
                 echo "File ".basename($_FILES['fileupload']['name'])."Thanh cong";
 
             }
             else echo "That bai khi upload file";
         }
-        else echo "Khong load duoc file";
     }
+
+    else echo "Khong load duoc file";
+
 //-------------------------------------------------
     //call value
     $name = $_POST['name'];
@@ -53,12 +55,31 @@
     $exdate = $_POST['expiredate'];
     $stock = $_POST['stock'];
     $filename = 'products/'.$_FILES['fileupload']['name'];
-    var_dump($filename);
-    //addz
-    if($cate != 'Select category'){ 
-        $result = DP::run_query ("INSERT INTO `productlist` (`productname`,`description`,`categories`,`expiredate`, `instock`,`img`) VALUES (?,?,?,?,?,?)",[$name,$des,$cate,$exdate,$stock,$filename],3);
+    //kiem tra co tai anh len hay khong
+    if($filename == $folder)
+        echo "Ban chua chon anh.";
+    $gender = $_POST['gender'];
+    if($gender == 1) 
+        $gender = "men";
+    elseif($gender == 2)
+        $gender = "women";
+    elseif($gender == 3)
+        $gender = "kid";
+    else $gender = "unisex";
+     $price = $_POST['price'];
+     $sale = $_POST['sale'];
+        if(isset($sale)) $salebox = true;
+        else $salebox = false;
+    // Kiem tra san pham trung
+    $allName = DP::run_query("SELECT name from product",[],2);
+    $checkName = 'TRUE';
+    foreach($allName as $c){
+        if($c['name'] == $name)
+            $checkName  = 'FALSE';
     }
-    //page load
-    header('location:'.$level.pages_path.'add-product.php');
-   
+      if($cate != 'Select category' && $checkName != false && $filename != $folder){ 
+          $result = DP::run_query ("INSERT INTO `product` (`name`,`description`,`catagory`,`expiredate`, `instock`,`img`,`gender`,`price`,`saleprice`,`salebox`) VALUES (?,?,?,?,?,?,?,?,?,?)",[$name,$des,$cate,$exdate,$stock,$filename,$gender,$price,$sale,$salebox],3);
+      }
+      //page load
+      header('location:'.$level.pages_path.'add-product.php');
 ?>

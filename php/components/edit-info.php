@@ -10,7 +10,7 @@
                 id="name"
                 name="name"
                 type="text"
-                value="<?php echo $epr[0]['productname'];?>"
+                value="<?php echo $epr[0]['name'];?>"
                 class="form-control validate"
             />  
         </div>
@@ -38,7 +38,7 @@
                 <?php 
                     foreach($cate as $ct){
                     ?>
-                        <option <?php if($ct['categoryid'] == $epr[0]['categories']) echo "selected=\"selected\"";?> value="<?php echo $ct['categoryid'];?>"><?php echo $ct['name']?></option>
+                        <option <?php if($ct['id'] == $epr[0]['catagory']) echo "selected=\"selected\"";?> value="<?php echo $ct['id'];?>"><?php echo $ct['name']?></option>
                     <?php
                     }
                 ?>

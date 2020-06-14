@@ -21,7 +21,7 @@
                 ?>
                     <tr>
                         <th scope="row"><input type="checkbox" name="check[]" value="<?php echo $pr['productid']?>"/></th>
-                        <td class="tm-product-name"><?php echo $pr['productname']?></td>
+                        <td class="tm-product-name"><?php echo $pr['name']?></td>
                         <td><?php echo $pr['unitsold']?></td>
                         <td><?php echo $pr['instock']?></td>
                         <td><?php echo $pr['expiredate']?></td>

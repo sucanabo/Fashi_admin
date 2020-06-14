@@ -3,7 +3,7 @@
         <h2 class="tm-block-title">Change Avatar</h2>
         <div class="tm-avatar-container">
         <img
-            src="<?php echo $level.img_path?>avatar.png"
+            src="<?php echo $level.img_path.'account/avatar.png'?>"
             alt="Avatar"
             class="tm-avatar img-fluid mb-4"
         />

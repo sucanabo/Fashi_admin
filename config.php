@@ -1,4 +1,5 @@
 <?php
+    $userid = 1;
     define('lv0', '');
     define('lv1', '../');
     define('lv2', '../../');

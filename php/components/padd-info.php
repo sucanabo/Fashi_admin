@@ -35,12 +35,28 @@
         >
             <option selected>Select category</option>
             <?php 
-            foreach($catagories as $ct){
+            foreach($catagory as $ct){
                 ?>
-                    <option <?php if (isset($cate) && $cate == $ct['categoryid']) echo "selected=\"selected\"";  ?> value="<?php echo $ct['categoryid'];?>"><?php echo $ct['name']?></option>
+                    <option <?php if (isset($cate) && $cate == $ct['id']) echo "selected=\"selected\"";  ?> value="<?php echo $ct['id'];?>"><?php echo $ct['name']?></option>
                 <?php
             }
             ?>
+        </select>
+    </div>
+    <div class="form-group mb-3">
+        <label
+            for="gender"
+            >Fashion</label
+        >
+        <select
+            class="custom-select tm-select-accounts"
+            id="gender" name = "gender"
+        >
+            <option selected>Select Fashion Style</option>
+            <option value="1">Men</option>
+            <option value="2">Women</option>
+            <option value="3">Kid</option>
+            <option value="4">Unisex</option>
         </select>
     </div>
     <div class="row">

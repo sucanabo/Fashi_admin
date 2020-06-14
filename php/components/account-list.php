@@ -5,9 +5,9 @@
         <p class="text-white">Accounts</p>
         <select class="custom-select">
         <?php 
-        foreach ($accountlist as $acc ) {
+        foreach ($account as $acc ) {
             ?>
-            <option value="<?php echo $acc['accountid'];?>"><?php echo $acc['accountname'];?></option>
+            <option value="<?php echo $acc['id'];?>"><?php echo $acc['username'];?></option>
             <?php
         }
             

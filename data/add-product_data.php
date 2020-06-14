@@ -1,3 +1,3 @@
 <?php 
-    $catagories = DP::run_query("SELECT * from categories",[],2);
+    $catagory = DP::run_query("SELECT * from catagory",[],2);
 ?>
