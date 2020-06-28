@@ -7,6 +7,7 @@
     $page_editproduct = false;
     $page_login = false;
     $page_products = false;
+    $page_addaccount = false;
     include_once ($level.'layout.php');
 
 ?>

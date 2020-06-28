@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="tm-product-img-dummy mx-auto">
-        <i
+        <i name = ""
         class="fas fa-cloud-upload-alt tm-upload-icon"
         onclick="document.getElementById('fileInput').click();"
         ></i>

@@ -3,11 +3,11 @@
     $level = lv1;
     $page_index = false;
     $page_accounts = false;
-    $page_addproduct = true;
+    $page_addproduct = false;
     $page_editproduct = false;
     $page_login = false;
     $page_products = false;
-    $page_addaccount = false;
+    $page_addaccount = true;
     include_once ($level.'layout.php');
 
 ?>

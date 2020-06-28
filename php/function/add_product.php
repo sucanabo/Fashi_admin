@@ -7,9 +7,7 @@
 
     //upload image
     $folder = "products/";
-    $targer_dir = $level.img_path.$folder; //thu muc luu anh
-    $targer_dir2= $level.'../FashiShop/'.img_path.$folder;
-    var_dump($targer_dir2);
+    $targer_dir = $level.'../FashiShop/'.img_path.$folder; //thu muc luu anh
     $targer_file = $targer_dir.basename($_FILES['fileupload']['name']);//duong dan luu tam
     $allowUpload = true;
     $imageFileType = pathinfo($targer_file,PATHINFO_EXTENSION);//lay dinh dang file
@@ -18,34 +16,38 @@
         //check anh
         $checkimg = getimagesize($_FILES['fileupload']['tmp_name']);
         if($checkimg !== false){
-            echo "Day la anh".$checkimg["mime"].".";
+            echo "This is an image".$checkimg["mime"].".";
             $allowUpload = true;
         }
         else{
-            echo "Khong phai la anh.";
+            echo "Not an image.";
             $allowUpload = false;
         }
         //khong cho ghi de
         if(file_exists($targer_file)){
-            echo "File da ton tai";
+            echo "File already exsisted.";
             $allowUpload = false;
         }
         //kiem tra kieu file
         if(!in_array($imageFileType,$allowTypes)){
-            echo "Chỉ được upload các định dạng JPG, PNG, JPEG, GIF";
+            echo "You can upload only extention file JPG, PNG, JPEG, GIF";
             $allowUpload = false;
         }
         //Check AllowUpload
         if($allowUpload){
-            if(move_uploaded_file($_FILES['fileupload']['tmp_name'],$targer_file) == true  && move_uploaded_file($_FILES['fileupload']['tmp_name'],$targer_dir2) == true){
-                echo "File ".basename($_FILES['fileupload']['name'])."Thanh cong";
+            if(move_uploaded_file($_FILES['fileupload']['tmp_name'],$targer_file)){
+                echo "File ".basename($_FILES['fileupload']['name'])." upload succeed.";
 
             }
-            else echo "That bai khi upload file";
+            else 
+            {
+                echo "Upload Failed!";
+                $allowUpload = false;
+            }
         }
     }
 
-    else echo "Khong load duoc file";
+    else echo "Can't upload file.";
 
 //-------------------------------------------------
     //call value
@@ -57,7 +59,7 @@
     $filename = 'products/'.$_FILES['fileupload']['name'];
     //kiem tra co tai anh len hay khong
     if($filename == $folder)
-        echo "Ban chua chon anh.";
+        echo "You not selected imgage yet.";
     $gender = $_POST['gender'];
     if($gender == 1) 
         $gender = "men";
@@ -77,9 +79,14 @@
         if($c['name'] == $name)
             $checkName  = 'FALSE';
     }
-      if($cate != 'Select category' && $checkName != false && $filename != $folder){ 
-          $result = DP::run_query ("INSERT INTO `product` (`name`,`description`,`catagory`,`expiredate`, `instock`,`img`,`gender`,`price`,`saleprice`,`salebox`) VALUES (?,?,?,?,?,?,?,?,?,?)",[$name,$des,$cate,$exdate,$stock,$filename,$gender,$price,$sale,$salebox],3);
-      }
+    var_dump($allowUpload);
+    if($allowUpload){
+        if($cate != 'Select category' && $checkName != 'FALSE' && $allowUpload != false){ 
+            $result = DP::run_query ("INSERT INTO `product` (`name`,`description`,`catagory`,`expiredate`, `instock`,`img`,`gender`,`price`,`saleprice`,`salebox`) VALUES (?,?,?,?,?,?,?,?,?,?)",[$name,$des,$cate,$exdate,$stock,$filename,$gender,$price,$sale,$salebox],3);
+        }
+    }
+    else echo "Product can't insert!";
+       
       //page load
       header('location:'.$level.pages_path.'add-product.php');
 ?>
