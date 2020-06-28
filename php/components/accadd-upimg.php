@@ -17,7 +17,7 @@
         ></i>
     </div>
     <div class="custom-file mt-3 mb-3">
-        <input required id="fileInput" type="file" name="fileupload" style="display:none;" />
+        <input id="fileInput" type="file" name="fileupload" style="display:none;" />
         <input
         type="button"
         class="btn btn-primary btn-block mx-auto"

@@ -63,7 +63,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link d-block" href="<?php echo $level.php_path.function_path.'logout.php'?>">
-                                Admin, <b>Logout</b>
+                                <?php echo $admin[0]['username'];?>, <b>Logout</b>
                             </a>
                         </li>
                     </ul>

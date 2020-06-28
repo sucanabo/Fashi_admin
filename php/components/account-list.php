@@ -1,5 +1,5 @@
 <?php 
-    if($listAcc[0]["type"] == 1){
+    if($indexAcc[0]["type"] == 1){
         ?>
         <div class="row tm-content-row">
             <div class="col-12 tm-block-col">

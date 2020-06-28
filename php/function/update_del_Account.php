@@ -4,8 +4,10 @@
     include_once ($level.'DB.php');
     $name = $_POST['name'];
     $mail = $_POST['email'];
-    $pass1 =$_POST['password'];
-    $pass2 =$_POST['password2'];
+    $pass1 = $_POST['password'];
+    $pass2 = $_POST['password2'];
+    $type = $_POST['type'];
+    $active = $_POST['active'];
 
     //-------------------------------------
 
@@ -78,7 +80,7 @@ else
     if(isset($_POST['update'])){
         echo "update";
         if($pass1 == $pass2){
-            $result = DP::run_query ("UPDATE account SET `email` = ?, `password` = ?, `img` = ? WHERE `id` = ?",[$mail,$pass1,$filename,$id[0]['id']],3);
+            $result = DP::run_query ("UPDATE account SET `email` = ?, `password` = ?, `img` = ?,`type` = ?, `active` = ? WHERE `id` = ?",[$mail,$pass1,$filename,$type,$active,$id[0]['id']],3);
             header("location:".$level.'index.php');
         }
         else

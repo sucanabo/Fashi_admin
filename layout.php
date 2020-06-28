@@ -4,6 +4,7 @@
 <?php
     include_once ($level.'DB.php');
     include_once ($level.php_path.'head.php');
+    include_once($level.data_path.'base_data.php');
 ?>
 
 <body id="reportsPage">
