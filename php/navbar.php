@@ -39,12 +39,19 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $level.pages_path.'accounts.php'?>">
-                                <i class="far fa-user"></i>
-                                Accounts
-                            </a>
-                        </li>
+                        <?php 
+                            if($admin[0]['type'] == 1 ){
+                                ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo $level.pages_path.'accounts.php'?>">
+                                            <i class="far fa-user"></i>
+                                            Accounts
+                                        </a>
+                                    </li>
+                                <?php
+                            }
+                        ?>
+                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">

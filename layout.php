@@ -4,7 +4,7 @@
 <?php
     include_once ($level.'DB.php');
     include_once ($level.php_path.'head.php');
-    include_once($level.data_path.'base_data.php');
+    include_once ($level.data_path.'base_data.php');
 ?>
 
 <body id="reportsPage">
@@ -38,7 +38,7 @@
                 include_once ($level.php_path.content_path.'products-content.php');
             }
             if($page_addaccount == true){
-                include_once($level.data_path.'add-account_data.php');
+                include_once ($level.data_path.'add-account_data.php');
                 include_once ($level.php_path.content_path.'addaccount-content.php');
             }
         ?>

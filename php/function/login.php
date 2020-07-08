@@ -10,20 +10,17 @@
     $pass = $_POST['password'];
     function check($listAcc,$user,$pass){
         foreach($listAcc as $acc){
-            if(($acc['username'] == $user || $acc['email'] == $user) && ($pass == $acc['password']) && $acc['active'] == 'active')
+            if(($acc['username'] == $user || $acc['email'] == $user) && ($pass == $acc['password']) && $acc['active'] == 'active' && $acc['type'] < 4)
                 //return($acc['id']);
                 return $acc['id'];
         }
         return -1;
     }
     $id = check($listAcc,$user,$pass);
-    var_dump($id);
     if($id != -1){
-        echo "duoc";
         $result = DP::run_query("update account set status = ?  where id = ?",[1,$id],3);
         header("location:".$level.'index.php');
     }
     else
         header("location:".$level.pages_path.'login.php');
-        echo "khong"
 ;?>

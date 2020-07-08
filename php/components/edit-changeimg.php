@@ -1,6 +1,6 @@
 <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
     <div class="tm-product-img-edit mx-auto">
-        <img src="<?php echo $level.img_path.$epr[0]['img'];?>" alt="Product image" class="img-fluid d-block mx-auto">
+        <img src="<?php echo $level.'../fashishop/'.img_path.$epr[0]['img'];?>" alt="Product image" class="img-fluid d-block mx-auto">
         <i
         class="fas fa-cloud-upload-alt tm-upload-icon"
         onclick="document.getElementById('fileInput').click();"
