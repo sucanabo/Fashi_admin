@@ -10,7 +10,7 @@
             <tr>
                 <td class="tm-product-name"><?php echo $ca['name']?></td>
                 <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
+                    <a href="<?php echo $level.php_path.function_path.'del-cate.php?del='.$ca['id']; ?>" class="tm-product-delete-link">
                     <i class="far fa-trash-alt tm-product-delete-icon"></i>
                     </a>
                 </td>
@@ -22,8 +22,18 @@
         </table>
     </div>
     <!-- table container -->
-    <button class="btn btn-primary btn-block text-uppercase mb-3">
-        Add new category
-    </button>
+    <form action="<?php echo $level.php_path.function_path.'add_cate.php' ?>" method ="POST">
+    <label for="name">Catagory name</label>
+        <input
+            id="name"
+            name="name"
+            type="text"
+            class="form-control validate mb-4"
+            required  
+        />
+        <input href = "<?php echo $level.php_path.function_path.'add_cate.php' ?>" class="btn btn-primary btn-block text-uppercase mb-3" type ="submit" name="addcate" value=" Add new category"></input>
+    </form>
+    
+   
     </div>
 </div>
