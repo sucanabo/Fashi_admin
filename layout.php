@@ -41,6 +41,10 @@
                 include_once ($level.data_path.'add-account_data.php');
                 include_once ($level.php_path.content_path.'addaccount-content.php');
             }
+            if($page_invoice == true){
+                include_once ($level.data_path.'bill_data.php');
+                include_once ($level.php_path.content_path.'invoice-content.php');
+            }
         ?>
         
         <?php include_once ($level.php_path.'footer.php')?>

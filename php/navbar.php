@@ -32,13 +32,24 @@
                                 <a class="dropdown-item" href="#">Yearly Report</a>
                             </div>
                         </li>
+                        <?php 
+                            if($admin[0]['type'] == 1 ){
+                                ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo $level.pages_path.'invoice.php'?>">
+                                        <i class="fas fa-file-invoice-dollar"></i>
+                                            Invoice
+                                        </a>
+                                    </li>
+                                <?php
+                            }
+                        ?>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo $level.pages_path.'products.php'?>">
                                 <i class="fas fa-shopping-cart"></i>
                                 Products
                             </a>
                         </li>
-
                         <?php 
                             if($admin[0]['type'] == 1 ){
                                 ?>
@@ -51,7 +62,6 @@
                                 <?php
                             }
                         ?>
-                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
@@ -61,7 +71,7 @@
                                 </span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="<?php echo $level.pages_path.'accounts.php'?>">Profile</a>
                                 <a class="dropdown-item" href="#">Billing</a>
                                 <a class="dropdown-item" href="#">Customize</a>
                             </div>
