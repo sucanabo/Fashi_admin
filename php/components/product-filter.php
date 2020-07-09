@@ -1,4 +1,4 @@
-<div class="row tm-content-row <?php if($page_filter == true) echo " col-lg-6 col-xl-6"?>">
+<div class="row tm-content-row">
     <div class="col-12 tm-block-col">
         <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
             <h2 class="tm-block-title">Filter</h2>

@@ -1,5 +1,5 @@
 <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8  tm-block-col">
-    <div class="tm-bg-primary-dark tm-block <?php if($page_filter == false ) echo " tm-block-products";?>">
+    <div class="tm-bg-primary-dark tm-block tm-block-products">
     <?php 
         if($productlist == null){
             ?>
