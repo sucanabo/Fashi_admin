@@ -2,7 +2,7 @@
     <!-- https://jquery.com/download/ -->
     <script src="<?php echo $level.js_path ?>moment.min.js"></script>
     <!-- https://momentjs.com/ -->
-    <script src="<?php echo $level.js_path ?>Chart.min.js"></script>
+    <script src="<?php echo $level.js_path ?>Chart.js"></script>
     <!-- http://www.chartjs.org/docs/latest/ -->
     <script src="<?php echo $level.js_path ?>bootstrap.min.js"></script>
     <!-- https://getbootstrap.com/ -->

@@ -433,12 +433,15 @@ input[type="checkbox"]:focus {
   min-height: 588px;
 }
 .tm-block-product-categories {
-  min-height: 650px;
+  min-height: 588px;
 }
 .tm-product-table-container {
   max-height: 465px;
   margin-bottom: 15px;
   overflow-y: scroll;
+}
+.fix-height{
+  height: 305px !important;
 }
 .tm-product-table tr {
   font-weight: 600;

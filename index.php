@@ -8,5 +8,6 @@
     $page_login = false;
     $page_products = false;
     $page_addaccount =false;
+    $page_invoice = false;
     include_once ($level.'layout.php');
 ?>

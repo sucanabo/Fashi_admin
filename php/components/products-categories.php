@@ -1,7 +1,7 @@
 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
     <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
     <h2 class="tm-block-title">Product Categories</h2>
-    <div class="tm-product-table-container">
+    <div class="tm-product-table-container  fix-height">
         <table class="table tm-table-small tm-product-table">
         <tbody>
         <?php 
@@ -23,7 +23,7 @@
     </div>
     <!-- table container -->
     <form action="<?php echo $level.php_path.function_path.'add_cate.php' ?>" method ="POST">
-    <label for="name">Catagory name</label>
+    <label for="name" class = "text-white">Catagory name</label>
         <input
             id="name"
             name="name"
