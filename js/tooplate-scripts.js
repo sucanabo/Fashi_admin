@@ -68,8 +68,19 @@ function drawLineChart() {
 
 function drawBarChart() {
   if ($("#barChart").length) {
+    var soldArr =[];
+    var nameArr=[];
+    var per = document.getElementById("perfomance");
+    for(var i = 1;i <= 14; i+=2){
+      var persold = per.childNodes[i].textContent;
+      var pername = per.childNodes[i].id;
+      soldArr.push(persold);
+      nameArr.push(pername);
+    }
+    console.log(nameArr);
+    console.log(soldArr);
+  
     ctxBar = document.getElementById("barChart").getContext("2d");
-
     optionsBar = {
       responsive: true,
       scales: {
@@ -105,11 +116,11 @@ function drawBarChart() {
     configBar = {
       type: "horizontalBar",
       data: {
-        labels: ["Red", "Aqua", "Green", "Yellow", "Purple", "Orange", "Blue"],
+        labels: nameArr,
         datasets: [
           {
             label: "# of Hits",
-            data: [33, 40, 28, 49, 58, 38, 44],
+            data: soldArr,
             backgroundColor: [
               "#F7604D",
               "#4ED6B8",
