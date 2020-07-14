@@ -2,9 +2,6 @@
     include_once ('../../config.php');
     $level = lv2;
     include_once ($level.'DB.php');
-    // $bill = $_POST['bill'];
-    // var_dump($bill[0]);
-    // var_dump($_POST);
         if(isset($_POST['moving'])){
             foreach($_POST['bill'] as $b){
                 var_dump($b);

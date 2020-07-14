@@ -8,8 +8,8 @@
     $page_login = false;
     $page_products = false;
     $page_addaccount = false;
-    $page_invoice = true;
-    $page_product_statistic = false;
+    $page_invoice = false;
+    $page_product_statistic = true;
     include_once ($level.'layout.php');
 
 ?>

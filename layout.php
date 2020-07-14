@@ -17,6 +17,7 @@
             if($page_index == true){
                 include_once ($level.data_path.'index_data.php');
                 include_once ($level.php_path.content_path.'index-content.php');
+
             }
             if ($page_accounts == true) {
                 include_once ($level.data_path.'account_data.php');
@@ -44,6 +45,10 @@
             if($page_invoice == true){
                 include_once ($level.data_path.'bill_data.php');
                 include_once ($level.php_path.content_path.'invoice-content.php');
+            }
+            if($page_product_statistic == true){
+                include_once ($level.data_path.'product-statistic_data.php');
+                include_once ($level.php_path.content_path.'product_statistic-content.php');
             }
         ?>
         
