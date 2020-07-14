@@ -22,12 +22,12 @@
         barChart, pieChart;
         // DOM is ready
         $(function () {
-            drawLineChart(); // Line Chart
+            //drawLineChart(); // Line Chart
             drawBarChart(); // Bar Chart
             drawPieChart(); // Pie Chart
 
             $(window).resize(function () {
-                updateLineChart();
+                //updateLineChart();
                 updateBarChart();                
             });
         })

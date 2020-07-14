@@ -9,6 +9,7 @@
     $page_products = false;
     $page_addaccount = false;
     $page_invoice = false;
+    $page_product_statistic = false;
     include_once ($level.'layout.php');
 
 ?>

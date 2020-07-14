@@ -17,38 +17,29 @@
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
-
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="far fa-file-alt"></i>
-                                <span>
-                                    Reports <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Daily Report</a>
-                                <a class="dropdown-item" href="#">Weekly Report</a>
-                                <a class="dropdown-item" href="#">Yearly Report</a>
-                            </div>
-                        </li>
                         <?php 
                             if($admin[0]['type'] == 1 ){
                                 ?>
                                     <li class="nav-item">
                                         <a class="nav-link" href="<?php echo $level.pages_path.'invoice.php'?>">
-                                        <i class="fas fa-file-invoice-dollar"></i>
+                                            <i class="fas fa-file-invoice-dollar"></i>
                                             Invoice
                                         </a>
                                     </li>
                                 <?php
                             }
                         ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $level.pages_path.'products.php'?>">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"  id = "navbarDropdown" role= "button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-shopping-cart"></i>
-                                Products
+                                <span>
+                                    Product <i class="fas fa-angle-down"></i>
+                                </span>
                             </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="<?php echo $level.pages_path.'products.php'?>">Product List</a>
+                                <a class="dropdown-item" href="<?php echo $level.pages_path.'product-statistic.php'?>">Product Statistics</a>
+                            </div>
                         </li>
                         <?php 
                             if($admin[0]['type'] == 1 ){

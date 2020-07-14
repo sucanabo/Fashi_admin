@@ -133,7 +133,8 @@ function drawBarChart() {
 function drawPieChart() {
   if ($("#pieChart").length) {
     var chartHeight = 300;
-
+    var instock = document.getElementById('instock').textContent;
+    var sold = document.getElementById('sold').textContent;
     $("#pieChartContainer").css("height", chartHeight + "px");
 
     ctxPie = document.getElementById("pieChart").getContext("2d");
@@ -159,15 +160,15 @@ function drawPieChart() {
       data: {
         datasets: [
           {
-            data: [18.24, 6.5, 9.15],
-            backgroundColor: ["#F7604D", "#4ED6B8", "#A8D582"],
+            data: [instock,sold],
+            backgroundColor: ["#F7604D", "#4ED6B8"],
             label: "Storage"
           }
         ],
         labels: [
-          "Used Storage (18.240GB)",
-          "System Storage (6.500GB)",
-          "Available Storage (9.150GB)"
+          "Instock items",
+          "Unit Sold items",
+
         ]
       },
       options: optionsPie

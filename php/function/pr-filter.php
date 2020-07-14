@@ -61,7 +61,7 @@
        } 
     else
     {
-        $result = DP::run_query("select * from product where $StringName $name $StringCate $cate $StringStock $stock $StringSold $sold ",[],2); 
+        $result = DP::run_query("select * from product where $StringName $name $StringCate $cate $StringStock $stock $StringSold $sold",[],2); 
         if($result == null){
             $script = "We don't have any product like that.";
         }
