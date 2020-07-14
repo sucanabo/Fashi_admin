@@ -1,7 +1,17 @@
 <div class="container mt-5">
+    <?php
+      include ($level.php_path.comp_path.'bill_filter.php');
+    ?>
       <div class="row tm-content-row">
         <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
           <div class="tm-bg-primary-dark tm-block tm-block-products">
+          <?php 
+            if(!empty($_GET)){
+                ?>
+                <h2 class="text-white mt-5 mb-5"><?php echo $script ?></h2>
+                <?php
+            }
+          ?>
             <div class="tm-product-table-container">
             <form action="<?php echo $level.php_path.function_path.'bill_change_status.php' ?>" method="POST" >
             <table class="table table-hover tm-table-small tm-product-table">
