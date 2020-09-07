@@ -72,7 +72,7 @@ function checkEmpty (){
 }
 $check = checkEmpty();
 if( $check == false){
-    header("location:".$level.pages_path.'accounts.php');
+    //header("location:".$level.pages_path.'accounts.php');
 }
 else
 {
@@ -81,18 +81,18 @@ else
         echo "update";
         if($pass1 == $pass2){
             $result = DP::run_query ("UPDATE account SET `email` = ?, `password` = ?, `img` = ?,`type` = ?, `active` = ? WHERE `id` = ?",[$mail,$pass1,$filename,$type,$active,$id[0]['id']],3);
-            header("location:".$level.'index.php');
+            //header("location:".$level.'index.php');
         }
         else
         {
-            header("location:".$level.pages_path.'accounts.php');   
+            //header("location:".$level.pages_path.'accounts.php');   
         }
         
     }
     if(isset($_POST['delete'])){
         echo "delete";
         $result = DP::run_query("delete from account where id = ?",[$id[0]['id']],3);
-        header("location:".$level.pages_path.'login.php');
+        //header("location:".$level.pages_path.'login.php');
     }
 }
     

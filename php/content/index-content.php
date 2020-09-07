@@ -13,3 +13,8 @@
         ?>
     </div>
 </div>
+<a href="<?php echo $level.'../fashishop/'.'index.php'?>">
+                <div class="backShopPage">
+                    <i class="fas fa-store-alt"></i>
+                </div>
+            </a>

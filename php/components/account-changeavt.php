@@ -12,7 +12,7 @@
         </a>
         </div>
         <form action="<?php echo $level.php_path.function_path.'update_del_Account.php'?>"   method ="post" enctype="multipart/form-data">
-            <input  required id="fileInput" class="btn btn-primary btn-block text-uppercase "  type="file" name="fileupload" style="display:none;">
+            <input  id="fileInput" class="btn btn-primary btn-block text-uppercase "  type="file" name="fileupload" style="display:none;">
             </input>
             <input
             type="button"
