@@ -6,7 +6,7 @@
     include_once ($level.php_path.'head.php');
     include_once ($level.data_path.'base_data.php');
 ?>
-
+<h1>Demo</h1>
 <body id="reportsPage">
     <div class="" id="home">
         <?php 
