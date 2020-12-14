@@ -1,6 +1,17 @@
 <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
     <div class="form-group mb-3">
         <label
+            for="d_name"
+            >Display name</label
+        >
+        <input type = "text"
+            class="form-control validate"
+            rows="3"
+            required name="d_name"
+        ></input>
+    </div>
+    <div class="form-group mb-3">
+        <label
             for="email"
             >Email</label
         >

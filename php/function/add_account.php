@@ -11,6 +11,7 @@
     $cfpass = $_POST['cfpassword'];
     $type = $_POST['type'];
     $active = $_POST['active'];
+    $d_name = $_POST['d_name'];
     //Check account already
     $allAcc = DP::run_query("select * from account",[],2);
     $checkAcc = true;
@@ -18,7 +19,6 @@
         if($c['username'] == $username || $c['email'] == $email || ($pass == $cfpass) == false)
             $checkAcc  = false;
     }
-    var_dump($checkAcc);
 //-------------------------------------
 
     //upload image
@@ -65,7 +65,6 @@
     }
 
     else echo "Can't upload file.";
-
 //-------------------------------------------------
    
     $filename = $_FILES['fileupload']['name'];
@@ -75,11 +74,11 @@
     var_dump($allowUpload);
     if($checkAcc){
         if($type != 0 && $checkAcc == true && $active != 'Select option'){ 
-           $result = DP::run_query("INSERT into account(username,`password`,`type`,`status`,email,img,active) VALUES (?,?,?,?,?,?,?) ",[$username,$pass,$type,0,$email,$filename,$active],3);
+           $result = DP::run_query("INSERT into account(username,`password`,`type`,`status`,email,img,active,`name`) VALUES (?,?,?,?,?,?,?,?) ",[$username,$pass,$type,0,$email,$filename,$active,$d_name],3);
         }
     }
     else echo "Account can't create!";
        
       //page load
-      header('location:'.$level.pages_path.'add-product.php');
+      header('location:'.$level.pages_path.'accounts.php');
 ?>

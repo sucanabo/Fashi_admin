@@ -3,8 +3,9 @@
                 <h2 class="tm-block-title">Account Settings</h2>
                <div class="tm-signup-form row">
                <div class="form-group col-lg-6">
-                <label for="name">Account Name</label>
-                <input  readonly id="name" name="name" type="text" class="form-control validate" value = "<?php echo $name; ?>" />
+                <label for="name">Display Name</label>
+                <input id="name" name="name" type="text" class="form-control validate" value = "<?php echo $name; ?>" />
+                <input id= "id" name = "id" type="text" hidden="hidden" value="<?php echo($_GET['id'])?>"/>
                 </input>
               </div>
               <div class="form-group col-lg-6">
@@ -33,11 +34,11 @@
                     class="custom-select tm-select-accounts"
                     id="type" name = "type"
                 >
-                    <option selected value = 0 >Select Type</option>
+                    <option value = 0 >Select Type</option>
                     <?php 
                     foreach($type as $t){
                         ?>
-                            <option value="<?php echo $t['typeid'];?>"><?php echo $t['type']?></option>
+                            <option value=<?php echo $t['typeid']; if($curAcc[0]['type'] == $t['typeid']) echo ' selected';?>><?php echo $t['type']?></option>
                         <?php
                     }
                     ?>
@@ -52,9 +53,9 @@
                     class="custom-select tm-select-accounts"
                     id="active" name = "active" required
                 >
-                    <option selected>Select option</option>
-                    <option value="active">Active</option>
-                    <option value="deactive">Deactive</option>
+                    <option value = 0>Select option</option>
+                    <option value="active" <?php if($curAcc[0]['active'] == "active") echo "selected"?>>Active</option>
+                    <option value="deactive" <?php if($curAcc[0]['active'] == "deactive") echo "selected"?>>Deactive</option>
                 </select>
             </div>     
                 <?php

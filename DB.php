@@ -2,7 +2,7 @@
 	class DP {  
 		// Phương thức kết nối
 		private static function connect_DB() {
-			$host = 'localhost';
+			$host = 'localhost:3308';
 			$dbname = 'fashi_shop2.0';
 			$us = 'root';
 			$pass = '';
